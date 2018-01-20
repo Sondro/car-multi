@@ -88,7 +88,7 @@ export default function (x, y, game, socket) {
           y: this.playerName.y
         },
         speed: {
-          value: this.speed,
+          value: `$({this.speed / 12) * 3600} / mph`,
           x: this.speedText.x,
           y: this.speedText.y
         }
