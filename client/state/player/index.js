@@ -49,9 +49,13 @@ export default function (x, y, game, socket) {
         if (isDown(game, KEYS.W) && !isDown(game, KEYS.aU) || isDown(game, KEYS.aU) && !isDown(game, KEYS.W)) {
           this.speed += 10;
         } 
-      } else {
-        if (this.speed >= 10) {
+      } 
+      else 
+      {
+        if (this.speed >= 10) 
+        {
           this.speed -= 10;
+        }
       }
 
       // Drive backwards if S is pressed down
