@@ -2,11 +2,12 @@ import { ASSETS_URL } from '.'
 
 const fileLoader = game => {
   game.load.crossOrigin = 'Anonymous';
-  game.stage.backgroundColor = '#1E1E1E';
-  game.load.image('asphalt', `${ASSETS_URL}/sprites/asphalt/asphalt_1080p.jpg`);
-//  game.load.image('asphalt', `${ASSETS_URL}/sprites/asphalt/asphalt.png`)
+//  game.stage.backgroundColor = '#1E1E1E';
+game.stage.backgroundColor = 'black';
+  game.load.image('asphalt', `${ASSETS_URL}/img/asphalt/asphalt_1080p.jpg`);
+//  game.load.image('asphalt', `${ASSETS_URL}/img/asphalt/asphalt.png`)
 
-  game.load.image('car', `${ASSETS_URL}/sprites/car/car.png`);
+  game.load.image('car', `${ASSETS_URL}/img/car/car.png`);
 }
 
 export default fileLoader
