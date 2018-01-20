@@ -7,6 +7,8 @@ import newPlayer from './sockets/newPlayer';
 import updatePlayers from './sockets/updatePlayers';
 import playerMovementInterpolation from './predictions/playerMovementInterpolation';
 
+console.log(`BUILD: ${new Date(year, month, day, hours, minutes, seconds, milliseconds)}`);
+
 const SERVER_IP = 'https://simple-car-game.herokuapp.com/'
 let socket = null;
 let otherPlayers = {};

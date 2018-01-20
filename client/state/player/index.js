@@ -1,11 +1,11 @@
 import createPlayer from './createPlayer';
-import { isDown, } from '../utils';
+import { isDown, neg } from '../utils';
 export default function (x, y, game, socket) {
   const player = {
     socket,
     sprite: createPlayer(x, y, game),
     playerName: null,
-    playerNum: 11,
+    playerNum: 0,
     speed: 0,
     speedText: null,
     drive (game) {
@@ -27,6 +27,17 @@ export default function (x, y, game, socket) {
         aR: Phaser.Keyboard.RIGHT,
       }
 
+      let camaro_maxFor = 401;
+      let camaro_maxRev = -200;
+      let camaro_accelFor = 10;
+      let camaro_accelRev = 5;
+      
+      let maxFor = camaro_maxFor;
+      let maxRev = camaro_maxRev;
+      let accelFor = camaro_accelFor;
+      let accelRev = camaro_accelRev;
+      let negLimit = neg(accelRev);
+
       // Only emit if the player is moving
       if (this.speed !== 0) {
         this.emitPlayerData()
@@ -37,19 +48,20 @@ export default function (x, y, game, socket) {
       {
         if (isDown(game, KEYS.W) && !isDown(game, KEYS.aU) || isDown(game, KEYS.aU) && !isDown(game, KEYS.W)) {
           this.speed += 10;
-        } else {
-          if (this.speed >= 10) {
-            this.speed -= 10;
-          }
-        }
+        } 
+      } else {
+        if (this.speed >= 10) {
+          this.speed -= 10;
       }
 
       // Drive backwards if S is pressed down
-      if (isDown(game, KEYS.S ) || isDown(game, KEYS.aD) && this.speed >= -200) {
-        this.speed -= 5
-      } else {
-        if (this.speed <= -5) {
-          this.speed += 5
+      if (this.speed >= -200) {
+        if (isDown(game, KEYS.S ) && !isDown(game, KEYS.aD) || isDown(game, KEYS.aD) && !isDown(game, KEYS.S )) {
+          this.speed -= 5
+        } else {
+          if (this.speed <= -5) {
+            this.speed += 5;
+          }
         }
       }
 
