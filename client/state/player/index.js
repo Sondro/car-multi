@@ -44,30 +44,19 @@ export default function (x, y, game, socket) {
       }
 
       // Drive forward if W is pressed down
-      if (this.speed <= 401)
-      {
-        if (isDown(game, KEYS.W) && !isDown(game, KEYS.aU) || isDown(game, KEYS.aU) && !isDown(game, KEYS.W)) {
-          this.speed += 10;
-        } 
-      } 
-      else 
-      {
-        if (this.speed >= 10) 
-        {
-          this.speed -= 10;
-        }
-      }
+      
+      if (isDown(game, KEYS.W) && !isDown(game, KEYS.aU) && this.speed < 401 || 
+          isDown(game, KEYS.aU) && !isDown(game, KEYS.W) && this.speed < 401) 
+        { this.speed += 10; }
+        else if (this.speed >= 10) { this.speed -= 10; }
 
       // Drive backwards if S is pressed down
-      if (this.speed >= -200) {
-        if (isDown(game, KEYS.S ) && !isDown(game, KEYS.aD) || isDown(game, KEYS.aD) && !isDown(game, KEYS.S )) {
-          this.speed -= 5
-        } else {
-          if (this.speed <= -5) {
-            this.speed += 5;
-          }
-        }
-      }
+      
+      if (isDown(game, KEYS.S ) && !isDown(game, KEYS.aD) && this.speed > -201 ||
+       isDown(game, KEYS.aD) && !isDown(game, KEYS.S) && this.speed > -201) 
+       { this.speed -= 5 } 
+       else if (this.speed <= -5) 
+       { this.speed += 5; }
 
       // Steers the car
       if (isDown(game, KEYS.A ) || isDown(game, KEYS.aL)) {
