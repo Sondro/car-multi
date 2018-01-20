@@ -59,7 +59,7 @@ export default function (x, y, game, socket) {
        { this.speed += 5; }
 
       // Steers the car
-      if (isDown(game, KEYS.A ) || isDown(game, KEYS.aL)) {
+      if (isDown(game, KEYS.A) && !isDown(game, KEYS.aL) || isDown(game, KEYS.aL) && !isDown(game, KEYS.A)) {
         this.sprite.body.angularVelocity = -5 * (this.speed / 1000)
       } else if (isDown(game, KEYS.D) || isDown(game, KEYS.aR)) {
         this.sprite.body.angularVelocity = 5 * (this.speed / 1000)
