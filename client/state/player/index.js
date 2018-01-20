@@ -1,5 +1,5 @@
 import createPlayer from './createPlayer';
-import { isDown } from '../utils';
+import { isDown, isUp, } from '../utils';
 export default function (x, y, game, socket) {
   const player = {
     socket,
@@ -33,11 +33,14 @@ export default function (x, y, game, socket) {
       }
 
       // Drive forward if W is pressed down
-      if (isDown(game, KEYS.W) && isUp(game, KEYS.aU) && this.speed <= 400 || isDown(game, KEYS.aU) && isUp(game, KEYS.W) && this.speed <= 400) {
-        this.speed += 10
-      } else {
-        if (this.speed >= 10) {
-          this.speed -= 10
+      if (this.speed <= 400)
+      {
+        if (isDown(game, KEYS.W) && isUp(game, KEYS.aU) || isDown(game, KEYS.aU) && isUp(game, KEYS.W)) {
+          this.speed += 10;
+        } else {
+          if (this.speed >= 10) {
+            this.speed -= 10;
+          }
         }
       }
 
