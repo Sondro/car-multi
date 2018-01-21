@@ -114,7 +114,7 @@ export default function (x, y, game, socket) {
       text.x = x;
       text.y = y;
       text.text = `${capitalizedStatus}: ${parseInt(this.newText)}`
-      text.text = text.text.replace(`${this.speed}`, `${pad(getMPH(this.speed), 3)} / mph`);
+      text.text = text.text.replace(`${this.speed}`, `${(getMPH(this.speed).toString().padStart(3, '0')} / mph`);
       game.world.bringToTop(text);
     }
   }
