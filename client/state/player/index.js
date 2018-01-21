@@ -29,8 +29,8 @@ export default function (x, y, game, socket) {
 
       let camaro1967_maxFor = 801;
       let camaro1967_maxRev = -200;
-      let camaro1967_accelFor = 10;
-      let camaro1967_accelRev = 5;
+      let camaro1967_accelFor = 3;
+      let camaro1967_accelRev = 1;
       
       let maxFor = camaro1967_maxFor;
       let maxRev = camaro1967_maxRev;
@@ -47,22 +47,22 @@ export default function (x, y, game, socket) {
       
       if (isDown(game, KEYS.W) && !isDown(game, KEYS.aU) && this.speed < 801 || 
           isDown(game, KEYS.aU) && !isDown(game, KEYS.W) && this.speed < 801) 
-        { this.speed += 10; }
-        else if (this.speed >= 10) { this.speed -= 10; }
+        { this.speed += 3; }
+        else if (this.speed >= 3) { this.speed -= 3; }
 
       // Drive backwards if S is pressed down
       
       if (isDown(game, KEYS.S ) && !isDown(game, KEYS.aD) && this.speed > -201 ||
        isDown(game, KEYS.aD) && !isDown(game, KEYS.S) && this.speed > -201) 
-       { this.speed -= 5 } 
-       else if (this.speed <= -5) 
-       { this.speed += 5; }
+       { this.speed -= 1 } 
+       else if (this.speed <= -1) 
+       { this.speed += 1; }
 
       // Steers the car
       if (isDown(game, KEYS.A) && !isDown(game, KEYS.aL) || isDown(game, KEYS.aL) && !isDown(game, KEYS.A)) {
-        this.sprite.body.angularVelocity = -10 * (this.speed / 1000);
+        this.sprite.body.angularVelocity = -7 * (this.speed / 1000);
       } else if (isDown(game, KEYS.D) || isDown(game, KEYS.aR)) {
-        this.sprite.body.angularVelocity = 10 * (this.speed / 1000);
+        this.sprite.body.angularVelocity = 7 * (this.speed / 1000);
       } else {
         this.sprite.body.angularVelocity = 0;
       }
