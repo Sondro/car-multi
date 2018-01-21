@@ -1,5 +1,5 @@
 import createPlayer from './createPlayer';
-import { isDown, getMPHstr3, } from '../utils';
+import { isDown, getMPHstr3, neg, } from '../utils';
 export default function (x, y, game, socket) {
   const player = {
     socket,
@@ -36,7 +36,7 @@ export default function (x, y, game, socket) {
       let maxRev = camaro1967_maxRev;
       let accelFor = camaro1967_accelFor;
       let accelRev = camaro1967_accelRev;
-      let negLimit = Math.abs(accelRev);
+      let negLimit = neg(accelRev);
 
       // Only emit if the player is moving
       if (this.speed !== 0) {
@@ -107,7 +107,8 @@ export default function (x, y, game, socket) {
     updatePlayerStatusText (status, x, y, text) {
       // Capitalize the status text
       //const capitalizedStatus = status[0].toUpperCase() + status.substring(1);
-      this.speedAbs = Math.abs(this.speed);
+      if(this.speed >= 0) { this.speedAbs = this.speed; }
+      else { this.speedAbs = neg(this.speed); }
 
       text.x = x;
       text.y = y;
