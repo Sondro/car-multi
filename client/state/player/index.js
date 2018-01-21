@@ -107,7 +107,7 @@ export default function (x, y, game, socket) {
     updatePlayerStatusText (status, x, y, text) {
       // Capitalize the status text
       const capitalizedStatus = status[0].toUpperCase() + status.substring(1);
-      let speedAbs = Math.abs(this.speed);
+      this.newText = Math.abs(this.speed);
       
      
       // Set the speed text to either 0 or the current speed
@@ -122,7 +122,7 @@ export default function (x, y, game, socket) {
       text.y = y;
       text.text = `${capitalizedStatus}: ${parseInt(this.newText)}`
 
-      text.text = text.text.replace(`${speedAbs}`, `${(getMPH(speedAbs).toString().padStart(3, '0'))} / mph`);
+      text.text = text.text.replace(`${this.newText}`, `${(getMPH(this.newText).toString().padStart(3, '0'))} / mph`);
       game.world.bringToTop(text);
       console.log(text.text);
     }
