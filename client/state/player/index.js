@@ -124,7 +124,7 @@ export default function (x, y, game, socket) {
 
       text.text = text.text.replace(`${this.newText}`, `${(getMPH(this.newText).toString().padStart(3, '0'))} / mph`);
       game.world.bringToTop(text);
-      console.log(text.text);
+      console.log('u: '+text.text);
     }
   }
   return player;
