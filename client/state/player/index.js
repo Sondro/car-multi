@@ -27,15 +27,15 @@ export default function (x, y, game, socket) {
         aR: Phaser.Keyboard.RIGHT,
       }
 
-      let camaro_maxFor = 401;
-      let camaro_maxRev = -200;
-      let camaro_accelFor = 10;
-      let camaro_accelRev = 5;
+      let camaro1967_maxFor = 801;
+      let camaro1967_maxRev = -200;
+      let camaro1967_accelFor = 10;
+      let camaro1967_accelRev = 5;
       
-      let maxFor = camaro_maxFor;
-      let maxRev = camaro_maxRev;
-      let accelFor = camaro_accelFor;
-      let accelRev = camaro_accelRev;
+      let maxFor = camaro1967_maxFor;
+      let maxRev = camaro1967_maxRev;
+      let accelFor = camaro1967_accelFor;
+      let accelRev = camaro1967_accelRev;
       let negLimit = neg(accelRev);
 
       // Only emit if the player is moving
@@ -45,8 +45,8 @@ export default function (x, y, game, socket) {
 
       // Drive forward if W is pressed down
       
-      if (isDown(game, KEYS.W) && !isDown(game, KEYS.aU) && this.speed < 401 || 
-          isDown(game, KEYS.aU) && !isDown(game, KEYS.W) && this.speed < 401) 
+      if (isDown(game, KEYS.W) && !isDown(game, KEYS.aU) && this.speed < 801 || 
+          isDown(game, KEYS.aU) && !isDown(game, KEYS.W) && this.speed < 801) 
         { this.speed += 10; }
         else if (this.speed >= 10) { this.speed -= 10; }
 
@@ -109,7 +109,8 @@ export default function (x, y, game, socket) {
       const capitalizedStatus = status[0].toUpperCase() + status.substring(1);
       let newText = ''
       // Set the speed text to either 0 or the current speed
-      this[status] < 0 ? this.newText = 0 : this.newText = this[status];
+      //this[status] < 0 ? this.newText = 0 : this.newText = this[status];
+      this[status] < 0 ? this.newText = neg(this[status]) : this.newText = this[status];
       // Updates the text position and string
       text.x = x;
       text.y = y;
