@@ -1,5 +1,5 @@
 import createPlayer from './createPlayer';
-import { isDown, getMPHStr3, } from '../utils';
+import { isDown, getMPHstr3, } from '../utils';
 export default function (x, y, game, socket) {
   const player = {
     socket,
@@ -114,7 +114,7 @@ export default function (x, y, game, socket) {
       //text.text = `${capitalizedStatus}: ${this.speedAbs}`;
       text.text = `${this.speedAbs}`;
 
-      text.text = text.text.replace(`${this.speedAbs}`, `${(getMPHStr3(this.speedAbs)} / mph`);
+      text.text = text.text.replace(`${this.speedAbs}`, `${(getMPHstr3(this.speedAbs)} / mph`);
       game.world.bringToTop(text);
       console.log('u: '+text.text);
     }
