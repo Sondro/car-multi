@@ -115,20 +115,15 @@ export default function (x, y, game, socket) {
       //if (this[status] < 0) { this.newText = neg(this[status]); }
       // Updates the text position and string
     
-      let speedNum = 0;
-
-      if (this[status] < 0) { 
-        speedNum = neg(this.speed); 
-        this.newText = `${speedNum}`; 
-      }
-      else { this.newText = this[status]; speedNum = `${this.speed}`;}
+      let speedAbs = Math.abs(this.speed);
+      this.newText = speedAbs; 
 
       text.x = x;
       text.y = y;
       text.text = `${capitalizedStatus}: ${parseInt(this.newText)}`
       //if (this[status] < 0) { text.text = text.text.replace(`${this.speedNum}`, `${(getMPH(this.speedNum).toString().padStart(3, '0'))} / mph`);
 
-      text.text = text.text.replace(`${this.speedNum}`, `${(getMPH(this.speedNum).toString().padStart(3, '0'))} / mph`);
+      text.text = text.text.replace(`${speedAbs}`, `${(getMPH(speedAbs).toString().padStart(3, '0'))} / mph`);
       //if (this[status] < 0) { text.text = text.text.replace(/`-`/gi, ``); }
       game.world.bringToTop(text);
       console.log(text.text);
