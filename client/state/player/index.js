@@ -107,21 +107,31 @@ export default function (x, y, game, socket) {
     updatePlayerStatusText (status, x, y, text) {
       // Capitalize the status text
       const capitalizedStatus = status[0].toUpperCase() + status.substring(1);
-      let newText = ''
+      let newText = '';
+
       // Set the speed text to either 0 or the current speed
       //this[status] < 0 ? this.newText = 0 : this.newText = this[status];
 
       //if (this[status] < 0) { this.newText = neg(this[status]); }
       // Updates the text position and string
-      this.newText = this[status];
-      if (this[status] < 0) { this.newText = text.newText.replace(/`-`/gi, ``); }
+    
+      let speedNum = 0;
+
+      if (this[status] < 0) { 
+        speedNum = neg(this.speed); 
+        this.newText = `${speedNum}`; 
+      }
+      else { this.newText = this[status]; speedNum = `${this.speed}`;}
 
       text.x = x;
       text.y = y;
       text.text = `${capitalizedStatus}: ${parseInt(this.newText)}`
-      text.text = text.text.replace(`${this.speed}`, `${(getMPH(this.speed).toString().padStart(3, '0'))} / mph`);
+      //if (this[status] < 0) { text.text = text.text.replace(`${this.speedNum}`, `${(getMPH(this.speedNum).toString().padStart(3, '0'))} / mph`);
+
+      text.text = text.text.replace(`${this.speedNum}`, `${(getMPH(this.speedNum).toString().padStart(3, '0'))} / mph`);
       //if (this[status] < 0) { text.text = text.text.replace(/`-`/gi, ``); }
       game.world.bringToTop(text);
+      console.log(text.text);
     }
   }
   return player;
