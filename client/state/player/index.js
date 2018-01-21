@@ -1,5 +1,5 @@
 import createPlayer from './createPlayer';
-import { isDown, neg, getMPH, } from '../utils';
+import { isDown, getMPHStr3, } from '../utils';
 export default function (x, y, game, socket) {
   const player = {
     socket,
@@ -36,7 +36,7 @@ export default function (x, y, game, socket) {
       let maxRev = camaro1967_maxRev;
       let accelFor = camaro1967_accelFor;
       let accelRev = camaro1967_accelRev;
-      let negLimit = neg(accelRev);
+      let negLimit = Math.abs(accelRev);
 
       // Only emit if the player is moving
       if (this.speed !== 0) {
@@ -114,7 +114,7 @@ export default function (x, y, game, socket) {
       //text.text = `${capitalizedStatus}: ${this.speedAbs}`;
       text.text = `${this.speedAbs}`;
 
-      text.text = text.text.replace(`${this.speedAbs}`, `${(getMPH(this.speedAbs).toString().padStart(3, '0'))} / mph`);
+      text.text = text.text.replace(`${this.speedAbs}`, `${(getMPHStr3(this.speedAbs)} / mph`);
       game.world.bringToTop(text);
       console.log('u: '+text.text);
     }
