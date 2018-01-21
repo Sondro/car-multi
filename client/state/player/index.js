@@ -74,7 +74,7 @@ export default function (x, y, game, socket) {
       game.world.bringToTop(this.sprite);
 
       this.updatePlayerName();
-     // this.updatePlayerStatusText('speed', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText);
+      this.updatePlayerStatusText('speed', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText);
     //this.updatePlayerStatusText('MPH:', this.sprite.body.x - 57, this.sprite.body.y - 39, getMPH(this.speed));
 
     },
@@ -107,6 +107,7 @@ export default function (x, y, game, socket) {
       game.world.bringToTop(this.playerName);
     },
     updatePlayerStatusText (status, x, y, text) {
+      this.speedText = `${getMPH(this.speed)} / mph`;
       // Capitalize the status text
       const capitalizedStatus = status[0].toUpperCase() + status.substring(1);
       let newText = ''
