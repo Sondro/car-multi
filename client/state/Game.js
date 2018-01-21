@@ -43,10 +43,10 @@ class Game extends Phaser.State {
     updatePlayers(socket, otherPlayers, this.game);
 
     // Csonfigures the game camera
-    this.camera.follow(this.player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
+    //this.camera.follow(this.player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
 
-  //  this.game.camera.x = this.player.sprite.x - 800 / 2;
-  //  this.game.camera.y = this.player.sprite.y - 600 / 2;
+    this.game.camera.x = this.player.sprite.x - 800 / 2;
+    this.game.camera.y = this.player.sprite.y - 600 / 2;
 
     // Scale game to fit the entire window
     this.game.scale.scaleMode = Phaser.ScaleManager.SHOW_ALL;
@@ -56,13 +56,14 @@ class Game extends Phaser.State {
     this.player.drive(this.game);
 
     // Move the camera to follow the player
-    //let cameraX = this.player.sprite.x - 800 / 2;
-    //let cameraY = this.player.sprite.y - 600 / 2;
-    //this.game.camera.x += (cameraX - this.game.camera.x) * 0.08;
-    //this.game.camera.y += (cameraY - this.game.camera.y) * 0.08;
+    let cameraX = this.player.sprite.x - 800 / 2;
+    let cameraY = this.player.sprite.y - 600 / 2;
+    this.game.camera.x += (cameraX - this.game.camera.x) * 0.08;
+    this.game.camera.y += (cameraY - this.game.camera.y) * 0.08;
 
     // Interpolates the players movement
     playerMovementInterpolation(otherPlayers);
+  
   }
 }
 
