@@ -113,11 +113,14 @@ export default function (x, y, game, socket) {
 
       //if (this[status] < 0) { this.newText = neg(this[status]); }
       // Updates the text position and string
+      this.newText = this[status];
+      if (this[status] < 0) { this.newText = text.newText.replace(/`-`/gi, ``); }
+
       text.x = x;
       text.y = y;
       text.text = `${capitalizedStatus}: ${parseInt(this.newText)}`
       text.text = text.text.replace(`${this.speed}`, `${(getMPH(this.speed).toString().padStart(3, '0'))} / mph`);
-      if (this[status] < 0) { text.text = text.text.replace(`-`, ``); }
+      //if (this[status] < 0) { text.text = text.text.replace(/`-`/gi, ``); }
       game.world.bringToTop(text);
     }
   }
