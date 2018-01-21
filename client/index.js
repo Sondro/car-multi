@@ -6,7 +6,6 @@ class App extends Phaser.Game {
     super(WINDOW_WIDTH, WINDOW_HEIGHT, Phaser.AUTO);
     this.state.add('Game', Game);
     this.state.start('Game');
-    this.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
   }
 }
 
