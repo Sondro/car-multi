@@ -42,8 +42,8 @@ class Game extends Phaser.State {
     // update all players
     updatePlayers(socket, otherPlayers, this.game);
 
-    // Configures the game camera
-    this.game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
+    // Csonfigures the game camera
+    game.camera.follow(player, Phaser.Camera.FOLLOW_LOCKON, 0.1, 0.1);
 
   //  this.game.camera.x = this.player.sprite.x - 800 / 2;
   //  this.game.camera.y = this.player.sprite.y - 600 / 2;
