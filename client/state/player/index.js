@@ -1,5 +1,5 @@
 import createPlayer from './createPlayer';
-import { isDown, neg } from '../utils';
+import { isDown, neg, getMPH, } from '../utils';
 export default function (x, y, game, socket) {
   const player = {
     socket,
@@ -75,7 +75,7 @@ export default function (x, y, game, socket) {
 
       this.updatePlayerName();
      // this.updatePlayerStatusText('speed', this.sprite.body.x - 57, this.sprite.body.y - 39, this.speedText);
-      this.updatePlayerStatusText('MPH:', this.sprite.body.x - 57, this.sprite.body.y - 39, ((this.speed / 12) * 3600) / 5280);
+      this.updatePlayerStatusText('MPH:', this.sprite.body.x - 57, this.sprite.body.y - 39, getMPH(this.speed));
 
     },
     emitPlayerData () {

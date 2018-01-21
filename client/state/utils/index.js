@@ -1,6 +1,10 @@
 export const neg = (n) => {
   return 0 - n;
 }
+export const getMPH = (n, s = 0.0833) => {
+  if(n < 1) { return 0; }
+  return Math.floor(((n * s) * 3600) / 5280);
+}
 
 export const isDown = (game, key) => game.input.keyboard.isDown(key);
 export const createText = (game, target) =>
