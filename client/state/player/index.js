@@ -110,12 +110,14 @@ export default function (x, y, game, socket) {
       let newText = ''
       // Set the speed text to either 0 or the current speed
       //this[status] < 0 ? this.newText = 0 : this.newText = this[status];
-      this[status] < 0 ? this.newText = neg(this[status]) : this.newText = this[status];
+
+      //if (this[status] < 0) { this.newText = neg(this[status]); }
       // Updates the text position and string
       text.x = x;
       text.y = y;
       text.text = `${capitalizedStatus}: ${parseInt(this.newText)}`
       text.text = text.text.replace(`${this.speed}`, `${(getMPH(this.speed).toString().padStart(3, '0'))} / mph`);
+      if (this[status] < 0) { text.text = text.text.replace(`-`, ``); }
       game.world.bringToTop(text);
     }
   }
