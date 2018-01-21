@@ -115,7 +115,7 @@ export default function (x, y, game, socket) {
       //text.text = `${capitalizedStatus}: ${this.speedAbs}`;
       text.text = `${this.speedAbs}`;
 
-      text.text = text.text.replace(`${this.speedAbs}`, `${getMPHstr3(this.speedAbs)}`);
+      text.text = text.text.replace(text.text, getMPHstr3(this.speedAbs));
       game.world.bringToTop(text);
       console.log('u: '+text.text);
     }
