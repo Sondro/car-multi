@@ -4,7 +4,7 @@ export default function (x, y, game, socket) {
   const player = {
     socket,
     sprite: createPlayer(x, y, game),
-    playerName: new Date(years, months, days, housrs, minutes, seconds, miliseconds).toString(),
+    playerName: new Date().toString(),
     playerNum: 7,
     speed: 0,
     speedText: null,
