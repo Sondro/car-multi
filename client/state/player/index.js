@@ -27,16 +27,21 @@ export default function (x, y, game, socket) {
         aR: Phaser.Keyboard.RIGHT,
       }
 
-      let camaro1967_maxFor = 801;
+      let camaro1967_maxFor = 401;
       let camaro1967_maxRev = -200;
       let camaro1967_accelFor = 10;
       let camaro1967_accelRev = 5;
-      
+      let camaro1967_leftRate = -5;
+      let camaro1967_rightRate = 5;
+       
+
       let maxFor = camaro1967_maxFor;
       let maxRev = camaro1967_maxRev;
       let accelFor = camaro1967_accelFor;
       let accelRev = camaro1967_accelRev;
       let negLimit = neg(accelRev);
+      let leftRate = camaro1967_leftRate;
+      let rightRate = camaro1967_rightRate;
 
       // Only emit if the player is moving
       if (this.speed !== 0) {
@@ -45,24 +50,24 @@ export default function (x, y, game, socket) {
 
       // Drive forward if W is pressed down
       
-      if (isDown(game, KEYS.W) && !isDown(game, KEYS.aU) && this.speed < 801 || 
-          isDown(game, KEYS.aU) && !isDown(game, KEYS.W) && this.speed < 801) 
-        { this.speed += 3; }
-        else if (this.speed >= 10) { this.speed -= 10; }
+      if (isDown(game, KEYS.W) && !isDown(game, KEYS.aU) && this.speed < maxFor || 
+          isDown(game, KEYS.aU) && !isDown(game, KEYS.W) && this.speed < maxFor) 
+        { this.speed += accelFor; }
+        else if (this.speed >= accelFor) { this.speed -= accelFor; }
 
       // Drive backwards if S is pressed down
       
-      if (isDown(game, KEYS.S ) && !isDown(game, KEYS.aD) && this.speed > -201 ||
-       isDown(game, KEYS.aD) && !isDown(game, KEYS.S) && this.speed > -201) 
-       { this.speed -= 5 } 
-       else if (this.speed <= -5) 
-       { this.speed += 5; }
+      if (isDown(game, KEYS.S ) && !isDown(game, KEYS.aD) && this.speed > maxRev ||
+       isDown(game, KEYS.aD) && !isDown(game, KEYS.S) && this.speed > maxRev) 
+       { this.speed -= accelRev } 
+       else if (this.speed <= negLimit) 
+       { this.speed += accelRev; }
 
       // Steers the car
       if (isDown(game, KEYS.A) && !isDown(game, KEYS.aL) || isDown(game, KEYS.aL) && !isDown(game, KEYS.A)) {
-        this.sprite.body.angularVelocity = -5 * (this.speed / 1000);
+        this.sprite.body.angularVelocity = leftRate * (this.speed / 1000);
       } else if (isDown(game, KEYS.D) || isDown(game, KEYS.aR)) {
-        this.sprite.body.angularVelocity = 5 * (this.speed / 1000);
+        this.sprite.body.angularVelocity = rightRate * (this.speed / 1000);
       } else {
         this.sprite.body.angularVelocity = 0;
       }
