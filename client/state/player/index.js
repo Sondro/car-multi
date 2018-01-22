@@ -4,7 +4,7 @@ export default function (x, y, game, socket) {
   const player = {
     socket,
     sprite: createPlayer(x, y, game),
-    playerName: new Date().toString(),
+    playerName: null,
     playerNum: 7,
     speed: 0,
     speedText: null,
@@ -51,7 +51,7 @@ export default function (x, y, game, socket) {
 
       // Only emit if the player is moving
       if (this.speed !== 0) {
-        this.emitPlayerData()
+        this.emitPlayerData();
       }
 
       // Drive forward if W or arrow Up is pressed down

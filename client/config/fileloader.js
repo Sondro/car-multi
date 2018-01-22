@@ -8,7 +8,7 @@ game.stage.backgroundColor = 'black';
 //  game.load.image('asphalt', `${ASSETS_URL}/img/asphalt/asphalt.png`)
 
   game.load.image('car', `${ASSETS_URL}/img/car/car.png`);
-  console.log(`Build: ${new Date().toString()}`);
+  // console.log(`Build: ${new Date().toString()}`);
 }
 
 export default fileLoader
