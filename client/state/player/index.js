@@ -42,20 +42,26 @@ export default function (x, y, game, socket) {
       let negLimit = neg(accelRev);
       let leftRate = camaro1967_leftRate;
       let rightRate = camaro1967_rightRate;
+       
+      let hp = 200; // * 746 = watts
+      let gears = 3;
+      let gearRatio;
+      let lbs = 2000; //lbs
+      let kgs = 0;
 
       // Only emit if the player is moving
       if (this.speed !== 0) {
         this.emitPlayerData()
       }
 
-      // Drive forward if W is pressed down
+      // Drive forward if W or arrow Up is pressed down
       
       if (isDown(game, KEYS.W) && !isDown(game, KEYS.aU) && this.speed < maxFor || 
           isDown(game, KEYS.aU) && !isDown(game, KEYS.W) && this.speed < maxFor) 
         { this.speed += accelFor; }
         else if (this.speed >= accelFor) { this.speed -= accelFor; }
 
-      // Drive backwards if S is pressed down
+      // Drive backwards if S or arrow Down is pressed down
       
       if (isDown(game, KEYS.S ) && !isDown(game, KEYS.aD) && this.speed > maxRev ||
        isDown(game, KEYS.aD) && !isDown(game, KEYS.S) && this.speed > maxRev) 
