@@ -5,7 +5,7 @@ export default function (x, y, game, socket) {
     socket,
     sprite: createPlayer(x, y, game),
     playerName: null,
-    playerNum: 3,
+    playerNum: 7,
     speed: 0,
     speedText: null,
     drive (game) {
@@ -27,7 +27,7 @@ export default function (x, y, game, socket) {
         aR: Phaser.Keyboard.RIGHT,
       }
 
-      let camaro1967_maxFor = 201;
+      let camaro1967_maxFor = 401;
       let camaro1967_maxRev = -200;
       let camaro1967_accelFor = 10;
       let camaro1967_accelRev = 5;
