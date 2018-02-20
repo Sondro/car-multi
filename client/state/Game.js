@@ -9,6 +9,8 @@ import playerMovementInterpolation from './predictions/playerMovementInterpolati
 
 
 const SERVER_IP = 'https://simple-car-game.herokuapp.com/'
+//const SERVER_IP = 'https://car-multi.herokuapp.com/'
+
 let socket = null;
 let otherPlayers = {};
 
@@ -55,10 +57,8 @@ class Game extends Phaser.State {
     this.game.touchControl = this.game.plugins.add(Phaser.Plugin.TouchControl);
     this.game.touchControl.inputEnable();
     this.game.touchControl.settings.singleDirection = false;
-    if (this.game.touchControl.myangle >= 399 && this.game.touchControl.myangle < -400)
-    {console.log('uppppp!');}
-
-    let toucher = this.game.touchControl;
+    //if (touchControl.cursors.up) {console.log('uppppp!');}
+    let touchControl = this.game.touchControl;
   }
 
   update () {
