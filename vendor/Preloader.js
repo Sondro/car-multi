@@ -130,6 +130,10 @@
 
 		create: function () {
 			//	Once the load has finished we disable the crop because we're going to sit in the update loop for a short while as the music decodes
+			
+			this.game.touchControl = this.game.plugins.add(Phaser.Plugin.TouchControl);
+			this.game.touchControl.inputEnable();
+			
 			this.preloadBar.cropEnabled = false;
 
 		},

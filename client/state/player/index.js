@@ -1,5 +1,9 @@
 import createPlayer from './createPlayer';
 import { isDown, getMPHstr3, neg, } from '../utils';
+//import `../vendor/phase-touch-control`;
+import touchControl from '../Game';
+import toucher from '../Game';
+
 export default function (x, y, game, socket) {
   const player = {
     socket,
@@ -53,11 +57,16 @@ export default function (x, y, game, socket) {
       if (this.speed !== 0) {
         this.emitPlayerData();
       }
-
-      // Drive forward if W or arrow Up is pressed down
       
+   //this.speed += touchControl.speed/10
+   
+      // Drive forward if W or arrow Up is pressed down
+
       if (isDown(game, KEYS.W) && !isDown(game, KEYS.aU) && this.speed < maxFor || 
-          isDown(game, KEYS.aU) && !isDown(game, KEYS.W) && this.speed < maxFor) 
+          isDown(game, KEYS.aU) && !isDown(game, KEYS.W) && this.speed < maxFor ||
+          !isDown(game, KEYS.W) && !isDown(game, KEYS.aU) &&
+          touchControl.myangle >= -1.875 && touchControl.myangle < -1.125
+        ) 
         { this.speed += accelFor; }
         else if (this.speed >= accelFor) { this.speed -= accelFor; }
 
