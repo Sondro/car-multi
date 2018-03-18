@@ -9,7 +9,8 @@
 |   ARROWS   |`           ^           `|
 | Left Click |`           ^           `|
 
-## Mobile Touch:
+#### Mobile Touch:
+
 |   KEY(S)   |          EVENTS         |
 | :--------: | :---------------------: |
 | Tap & Drag |          to move        |
