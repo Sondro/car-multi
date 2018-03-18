@@ -3,11 +3,11 @@
 
 ### Controls:
 
-|   KEY(S)   |          EVENTS         |
-| :--------: | :---------------------: |
-|    WASD    |          to move        |
-|   ARROWS   |`           ^           `|
-| Left Click |`           ^           `|
+|     KEY(S)   |          EVENTS         |
+| :----------: | :---------------------: |
+|     WASD     |          to move        |
+|    ARROWS    |`           ^           `|
+| CLick & Drag |`           ^           `|
 
 #### Mobile:
 
