@@ -24,4 +24,4 @@
 |`[+]`| Update joystick graphics                                       |
 |`[+]`| Move client's non-input data to server                         |
 |`[+]`| Add damage/life		                                       |
-|`[+]`| Add damage/life		                                       |
+|`[+]`| Add zombies/enemies                                            |
