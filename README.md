@@ -12,5 +12,6 @@
 ### To-Do:
 |     |                                                                |
 | --- | -------------------------------------------------------------- |
-|`[-]`| Remove excess folders    |
-|`[+]`| Finish                     |
+|`[-]`| Remove excess folders                                          |
+|`[+]`| Finish touch controls                                          |
+|`[+]`|
