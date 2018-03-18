@@ -23,3 +23,4 @@
 |`[+]`| Update car graphics                                            |
 |`[+]`| Update joystick graphics                                       |
 |`[+]`| Move non-key data to server                                    |
+|`[+]`| Add damage/life		                                       |
