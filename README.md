@@ -18,7 +18,7 @@
 ### To-Do:
 |     |                                                                |
 | --- | -------------------------------------------------------------- |
-|`[-]`| Remove excess folders                                          |
+|`[-]`| Remove excess source folders                                   |
 |`[+]`| Finish touch controls                                          |
 |`[+]`| Update car graphics                                            |
 |`[+]`| Move non-key data to server                                    |
