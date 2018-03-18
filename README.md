@@ -25,3 +25,4 @@
 |`[+]`| Move client's non-input data to server                         |
 |`[+]`| Add damage/life		                                       |
 |`[+]`| Add zombies/enemies                                            |
+|`[+]`| Websockets support                                             |
