@@ -21,4 +21,5 @@
 |`[-]`| Remove excess source folders                                   |
 |`[+]`| Finish touch controls                                          |
 |`[+]`| Update car graphics                                            |
+|`[+]`| Update joystick graphics                                       |
 |`[+]`| Move non-key data to server                                    |
