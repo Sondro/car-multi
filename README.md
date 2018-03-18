@@ -1,4 +1,4 @@
-# [Multiplayer Car Game](https://github.com/Sondro/car-multi): 
+# [Multiplayer Car Game](https://github.com/Sondro/car-multi) 
 [_Featuring Socket.io_](https://socket.io) 
 
 ### Controls:
