@@ -9,7 +9,7 @@
 |   ARROWS   |`           ^           `|
 | Left Click |`           ^           `|
 
-#### Mobile Touch:
+#### Mobile:
 
 |   KEY(S)   |          EVENTS         |
 | :--------: | :---------------------: |
