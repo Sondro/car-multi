@@ -14,4 +14,4 @@
 | --- | -------------------------------------------------------------- |
 |`[-]`| Remove excess folders                                          |
 |`[+]`| Finish touch controls                                          |
-|`[+]`|
+|`[+]`| Update graphics                                                |
