@@ -20,4 +20,5 @@
 | --- | -------------------------------------------------------------- |
 |`[-]`| Remove excess folders                                          |
 |`[+]`| Finish touch controls                                          |
-|`[+]`| Update graphics                                                |
+|`[+]`| Update car graphics                                            |
+|`[+]`| Move non-key data to server                                    |
