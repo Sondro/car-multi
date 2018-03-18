@@ -22,5 +22,6 @@
 |`[+]`| Finish touch controls                                          |
 |`[+]`| Update car graphics                                            |
 |`[+]`| Update joystick graphics                                       |
-|`[+]`| Move non-key data to server                                    |
+|`[+]`| Move client's non-input data to server                         |
+|`[+]`| Add damage/life		                                       |
 |`[+]`| Add damage/life		                                       |
