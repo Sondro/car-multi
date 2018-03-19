@@ -28,4 +28,4 @@
 |`[+]`| Websockets support                                             |
 
 ### Credits:
-[_Simple Car ame by gdomaradzki_](https://github.com/gdomaradzki/simple-car-game.git)
+[_Simple Car Game by Gdomaradzki_](https://github.com/gdomaradzki/simple-car-game)
