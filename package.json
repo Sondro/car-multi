@@ -20,9 +20,9 @@
   "author": "Sondro",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gdomaradzki/simple-car-game/issues"
+    "url": "https://github.com/sondro/simple-car-multi/issues"
   },
-  "homepage": "https://github.com/gdomaradzki/simple-car-game#readme",
+  "homepage": "https://github.com/sondro/car-multi#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
