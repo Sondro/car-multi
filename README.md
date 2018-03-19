@@ -9,7 +9,7 @@
 |    ARROWS    |`           ^           `|
 | CLick & Drag |`           ^           `|
 
-#### Mobile:
+### Mobile:
 
 |   KEY(S)   |          EVENTS         |
 | :--------: | :---------------------: |
