@@ -1,7 +1,7 @@
 {
-  "name": "basic-car-game",
+  "name": "car-multi",
   "version": "1.0.0",
-  "description": "Simple multiplayer online car game made as a tutorial",
+  "description": "Online car game",
   "main": "index.js",
   "scripts": {
     "build": "webpack --progress --colors",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gdomaradzki/simple-car-game.git"
+    "url": "git+https://github.com/sondro/car-multi.git"
   },
   "keywords": [
     "Node.js",
     "Socket.io",
     "Phaser.js"
   ],
-  "author": "Gustavo Domaradzki",
+  "author": "Sondro",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/gdomaradzki/simple-car-game/issues"
