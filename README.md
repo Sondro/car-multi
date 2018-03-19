@@ -26,3 +26,6 @@
 |`[+]`| Add damage/life		                                       |
 |`[+]`| Add zombies/enemies                                            |
 |`[+]`| Websockets support                                             |
+
+### Credits:
+[_Simple Car ame by gdomaradzki_](https://github.com/gdomaradzki/simple-car-game.git)
