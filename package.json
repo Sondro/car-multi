@@ -20,7 +20,7 @@
   "author": "Sondro",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sondro/simple-car-multi/issues"
+    "url": "https://github.com/sondro/car-multi/issues"
   },
   "homepage": "https://github.com/sondro/car-multi#readme",
   "devDependencies": {
