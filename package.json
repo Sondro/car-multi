@@ -29,7 +29,7 @@
     "babel-loader": "8.1.0",
     "babel-preset-env": "1.7.0",
     "babel-register": "6.26.0",
-    "html-webpack-plugin": "4.2.0",
+    "html-webpack-plugin": "4.2.1",
     "uglifyjs-webpack-plugin": "2.2.0",
     "webpack": "4.43.0"
   },
